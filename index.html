@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Sprache auf Deutsch -->
+<head>
+  <meta charset="UTF-8" /> <!-- Zeichensatzdefinition -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive Design für Mobilgeräte -->
+  <title>BookSwaper</title> <!-- Titel im Browser-Tab -->
+
+  <link rel="manifest" href="manifest.webmanifest" /> <!-- Verknüpfung zur Web-App-Manifestdatei -->
+
+  <!-- Materialize CSS Framework & Google Icons -->
+  <link href="css/materialize.min.css" rel="stylesheet" /> <!-- Materialize für Layout & Komponenten -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> <!-- Material Icons von Google -->
+
+  <!-- Eigene Stylesheet -->
+  <link href="css/styles.css" rel="stylesheet" /> <!-- Benutzerdefiniertes Design -->
+</head>
+
+<body class="teal lighten-5"> <!-- Grundfarbe des Hintergrunds -->
+
+<!-- Obere Navigationsleiste -->
+<nav class="z-depth-0 top-header">
+  <div class="nav-wrapper container">
+    <a href="/" class="brand-logo right">Book<span>Swaper</span></a> <!-- Logo (Rechts ausgerichtet) -->
+  </div>
+</nav>
+
+<!-- Hauptinhalt der Startseite -->
+<div class="container" style="padding-top: 60px;">
+  <h5 class="center">Tauschbare Bücher</h5> <!-- Überschrift -->
+
+  <!-- Bereich für die dynamisch eingefügten Bücher -->
+  <div class="books container grey-text text-darken-1" id="book-list">
+    <!-- Hier fügt JS (aus app.js) die Bücher als HTML ein -->
+  </div>
+
+  <!-- Login/Logout Button -->
+  <div class="center-align" style="margin-top: 2rem; margin-bottom: 4rem;">
+    <a id="login-logout-btn" class="btn-large white-text" style="background-color: #cbb799; color: #00695c;">
+      Jetzt anmelden & Bücher tauschen <!-- Text ändert sich je nach Loginstatus dynamisch -->
+    </a>
+  </div>
+</div>
+
+<!-- Detailansicht eines Buchs (wird über JS angezeigt/versteckt) -->
+<div id="book-detail" class="container" style="display: none; padding-top: 80px;">
+  <div id="detail-content" class="section"></div> <!-- Buchdetails per JS eingefügt -->
+  <a href="#" id="back-to-list" class="btn-small white-text" style="background-color: #cbb799;">
+    Zurück zur Liste <!-- Blendet Detailansicht aus, zeigt Liste wieder -->
+  </a>
+</div>
+
+<!-- Untere Navigationsleiste -->
+<nav class="bottom-nav" aria-label="Hauptnavigation">
+  <ul class="bottom-nav-list">
+    <!-- Jeder Menüpunkt verweist auf eine Seite oder Aktion -->
+
+    <li>
+      <a href="./index.html" title="Startseite">
+        <i class="material-icons">home</i>
+        <span>Startseite</span>
+      </a>
+    </li>
+
+    <!-- Nur sichtbar, wenn Nutzer eingeloggt ist (Klasse "auth-only") -->
+    <li id="menu-success" class="auth-only">
+      <a href="pages/success.html" title="Erfolge">
+        <i class="material-icons">emoji_events</i>
+        <span>Erfolge</span>
+      </a>
+    </li>
+    <li id="menu-addbook" class="auth-only">
+      <a href="pages/addbook.html" title="Scanner">
+        <i class="material-icons">photo_camera</i>
+        <span>Scanner</span>
+      </a>
+    </li>
+    <li id="menu-mybooks" class="auth-only">
+      <a href="pages/mybooks.html" title="Meine Bücher">
+        <i class="material-icons">menu_book</i>
+        <span>Meine Bücher</span>
+      </a>
+    </li>
+
+    <!-- Nur sichtbar, wenn Nutzer **nicht** eingeloggt ist (Klasse "guest-only") -->
+    <li id="menu-login" class="guest-only">
+      <a href="pages/login.html" title="Login">
+        <i class="material-icons">login</i>
+        <span>Login</span>
+      </a>
+    </li>
+
+    <!-- Logout-Link wird dynamisch angezeigt und verwendet JS -->
+    <li id="menu-logout" class="auth-only">
+      <a href="#" id="logoutLink" title="Logout">
+        <i class="material-icons">logout</i>
+        <span>Logout</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Scripte -->
+<script src="js/materialize.min.js"></script>
+<script src="js/common.js"></script> <!-- Gemeinsame Funktionen (z. B. Loginstatus prüfen, Menüeinträge ein-/ausblenden) -->
+<script type="module" src="js/app.js"></script> <!-- Hauptlogik für Indexseite: Bücher laden, anzeigen, Detailansicht steuern -->
+
+</body>
+</html>

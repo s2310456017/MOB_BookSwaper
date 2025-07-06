@@ -1,0 +1,26 @@
+{
+  "theme_color": "#cbb799",  // Farbe der Adressleiste auf mobilen Geräten (z.B. bei Android-Chrome oben)
+  "background_color": "#faf0dc",
+  "display": "standalone",  // Darstellung wie native App, ohne Browser-UI (z.B. Adressleiste oder Tabs)
+  "scope": "./",  // Nur Dateien unterhalb des aktuellen Verzeichnisses gehören zur App
+  "start_url": "./",  // URL, die beim Öffnen aus dem Homescreen geladen wird (i.d.R. index.html)
+  "name": "BookSwaper",  // Vollständiger Name der PWA – erscheint z.B. im App Switcher oder Install-Dialog
+  "short_name": "BookSwaper",  // Kurzer Name für App-Icons (z.B. unter dem Icon auf dem Homescreen)
+  "orientation": "portrait",  // Erzwingt Hochformat (gut für mobile Nutzung, Scan-UI etc.)
+  "description": "Tausche Bücher mit anderen - Deine Online-Bibliothek",  // Beschreibung der PWA – erscheint im Installationsdialog und im Web App Manifest
+  "icons": [
+    {
+      "src": "img/BookSwaper_Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/BookSwaper_Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+  // Icons für Homescreen / App Drawer
+  // 192x192 → für normale Android-Geräte
+  // 512x512 → für hochauflösende Geräte oder Splashscreen
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Meine Bücher | BookSwaper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Materialize CSS & Icons -->
+    <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="../css/styles.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="../js/materialize.min.js" defer></script>
+    <script src="../js/common.js" defer></script>
+    <script type="module" src="../js/mybook.js" defer></script>
+</head>
+
+<body class="teal lighten-5">
+
+<!-- Top Navigation -->
+<nav class="z-depth-0">
+    <div class="nav-wrapper container">
+        <a href="/" class="brand-logo right">Book<span>Swaper</span></a>
+    </div>
+</nav>
+
+<!-- Hauptinhalt -->
+<div class="container">
+    <h5 class="center">Meine Bücher</h5>
+    <div class="row">
+        <div class="col s12 m6">
+            <h6>Hochgeladene Bücher</h6>
+            <div id="my-uploaded-books" class="section">
+                <!-- Dynamisch generierte Inhalte -->
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <h6>Ausgeliehene Bücher</h6>
+            <div id="my-borrowed-books" class="section">
+                <!-- Dynamisch generierte Inhalte -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav" aria-label="Hauptnavigation">
+    <ul class="bottom-nav-list">
+        <li>
+            <a href="../index.html" title="Startseite">
+                <i class="material-icons">home</i>
+                <span>Start</span>
+            </a>
+        </li>
+        <li id="menu-success" style="display:none;">
+            <a href="success.html" title="Erfolge">
+                <i class="material-icons">emoji_events</i>
+                <span>Erfolge</span>
+            </a>
+        </li>
+        <li id="menu-addbook" style="display:none;">
+            <a href="addbook.html" title="Scanner">
+                <i class="material-icons">photo_camera</i>
+                <span>Scanner</span>
+            </a>
+        </li>
+        <li id="menu-mybooks" style="display:none;">
+            <a href="mybooks.html" title="Meine Bücher">
+                <i class="material-icons">menu_book</i>
+                <span>Meine Bücher</span>
+            </a>
+        </li>
+        <li id="menu-login">
+            <a href="login.html" title="Login">
+                <i class="material-icons">login</i>
+                <span>Login</span>
+            </a>
+        </li>
+        <li id="menu-logout" style="display:none;">
+            <a href="#" title="Logout">
+                <i class="material-icons">logout</i>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>
